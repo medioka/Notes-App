@@ -3,6 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="ghost_white">#F8F8FA</color>
-    <color name="whisper">#E4E4E4</color>
+    <color name="whisper">#C5C5C5</color>
     <color name="orange">#FC5722</color>
 </resources>

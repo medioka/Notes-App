@@ -27,14 +27,15 @@
 
         <ImageButton
             android:id="@+id/btnMoreAction"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/content_description_more_info"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_more_horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/tvNoteTitle"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvNoteTitle"
             app:layout_constraintTop_toTopOf="@id/tvNoteTitle"
             app:tint="@color/whisper" />
@@ -62,8 +63,8 @@
             android:textSize="8sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvNoteContent"
-            tools:text="Sun, 29 Jan 23"
-            tools:ignore="SmallSp" />
+            tools:ignore="SmallSp"
+            tools:text="Sun, 29 Jan 23" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
