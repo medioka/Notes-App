@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Notes App</string>
+    <string name="content_description_more_info">More Info</string>
 </resources>

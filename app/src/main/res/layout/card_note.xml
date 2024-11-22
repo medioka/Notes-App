@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_note"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:elevation="20dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/tvNoteTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Purpose of Life" />
+
+        <ImageButton
+            android:id="@+id/btnMoreAction"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/content_description_more_info"
+            android:src="@drawable/ic_more_horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNoteTitle"
+            app:layout_constraintStart_toEndOf="@id/tvNoteTitle"
+            app:layout_constraintTop_toTopOf="@id/tvNoteTitle"
+            app:tint="@color/whisper" />
+
+        <TextView
+            android:id="@+id/tvNoteContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="7"
+            android:minLines="7"
+            android:textColor="@color/whisper"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNoteTitle"
+            tools:text="This is my note" />
+
+        <TextView
+            android:id="@+id/tvNoteCreatedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textColor="@color/whisper"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNoteContent"
+            tools:text="Sun, 29 Jan 23"
+            tools:ignore="SmallSp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
