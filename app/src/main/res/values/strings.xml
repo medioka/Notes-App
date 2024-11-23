@@ -7,4 +7,7 @@
     <string name="title_empty">No notes</string>
     <string name="title_error">Unexpected Error</string>
     <string name="label_error_message">Please try again later</string>
+    <string name="hint_title_text">Title Note</string>
+    <string name="hint_content">Content</string>
+    <string name="content_description_edit_note">Edit Note</string>
 </resources>

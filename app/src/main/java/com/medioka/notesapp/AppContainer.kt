@@ -25,4 +25,14 @@ class AppContainer(application: Application) {
 
         return notesViewModel
     }
+
+    fun getNoteViewModel(owner: ViewModelStoreOwner, id: Int): NoteViewModel {
+        val noteViewModel =
+            ViewModelProvider(
+                owner = owner,
+                factory = NoteViewModelFactory(getNotesUseCase, modifyNoteUseCase, id)
+            )[NoteViewModel::class.java]
+
+        return noteViewModel
+    }
 }

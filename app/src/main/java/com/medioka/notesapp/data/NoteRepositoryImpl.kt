@@ -29,7 +29,7 @@ class NoteRepositoryImpl(private val noteDao: NoteDao) : NoteRepository {
 
     override suspend fun getNoteDetail(id: Int): ResultState<Note> {
         return try {
-            val note = noteDao.getNoteDetail(id)
+            val note = noteDao.getNoteDetail(id) ?: throw NullPointerException()
             ResultState.Success(note)
         } catch (e: Exception) {
             ResultState.Error(e)

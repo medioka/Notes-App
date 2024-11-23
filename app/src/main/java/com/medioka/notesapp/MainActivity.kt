@@ -1,7 +1,6 @@
 package com.medioka.notesapp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +10,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.medioka.notesapp.databinding.ActivityMainBinding
 import com.medioka.notesapp.domain.Note
 import com.medioka.notesapp.domain.ResultState
@@ -35,7 +33,7 @@ class MainActivity : AppCompatActivity(), NoteListener {
         notesViewModel = (application as NoteApplication).appContainer.getNotesViewModel(this)
         binding.rvNotes.layoutManager = GridLayoutManager(this, 2)
 
-        handleAddNoteClick()
+        handleAddNoteButton()
         observeNotes()
     }
 
@@ -72,8 +70,10 @@ class MainActivity : AppCompatActivity(), NoteListener {
         }
     }
 
-    private fun handleAddNoteClick() {
-        //TODO: later
+    private fun handleAddNoteButton() {
+        binding.fabAddNote.setOnClickListener {
+            NoteActivity.launchActivity(this, NoteActivity.NO_ID)
+        }
     }
 
     private fun addDataToRecyclerView(notes: List<Note>) {
@@ -90,12 +90,11 @@ class MainActivity : AppCompatActivity(), NoteListener {
     }
 
     override fun onNoteClicked(id: Int) {
-        //TODO: Get to detailed note
+        NoteActivity.launchActivity(this, id)
     }
 
     override fun onDeleteClicked(note: Note) {
         notesViewModel.deleteNote(note)
     }
-
 }
 
