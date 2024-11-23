@@ -3,21 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_note"
-    android:layout_width="wrap_content"
+    android:layout_width="150dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="20dp"
     android:layout_height="wrap_content"
     android:elevation="20dp"
     app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/white"
-        android:padding="4dp">
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/tvNoteTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
             android:maxLines="1"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -26,23 +29,22 @@
             tools:text="Purpose of Life" />
 
         <ImageButton
-            android:id="@+id/btnMoreAction"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="8dp"
+            android:id="@+id/btnDelete"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/content_description_more_info"
             android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_more_horizontal"
+            android:src="@drawable/ic_delete"
             app:layout_constraintBottom_toBottomOf="@+id/tvNoteTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tvNoteTitle"
-            app:layout_constraintTop_toTopOf="@id/tvNoteTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvNoteTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvNoteTitle"
             app:tint="@color/whisper" />
 
         <TextView
             android:id="@+id/tvNoteContent"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:ellipsize="end"

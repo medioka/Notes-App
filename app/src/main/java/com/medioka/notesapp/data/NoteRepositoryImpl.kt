@@ -21,7 +21,10 @@ class NoteRepositoryImpl(private val noteDao: NoteDao) : NoteRepository {
         }.catch { exception ->
             emit(ResultState.Error(exception))
         }
+    }
 
+    override fun dummy(): Flow<List<Note>> {
+        return noteDao.getNotes()
     }
 
     override suspend fun getNoteDetail(id: Int): ResultState<Note> {

@@ -3,4 +3,8 @@
     <string name="content_description_more_info">More Info</string>
     <string name="title_app">Notes App</string>
     <string name="content_description_add_note">Add Note</string>
+    <string name="label_empty_message">Tap the Add button to create a note</string>
+    <string name="title_empty">No notes</string>
+    <string name="title_error">Unexpected Error</string>
+    <string name="label_error_message">Please try again later</string>
 </resources>
