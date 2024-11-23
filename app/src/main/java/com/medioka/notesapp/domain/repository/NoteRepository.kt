@@ -1,10 +1,11 @@
-package com.medioka.notesapp.domain
+package com.medioka.notesapp.domain.repository
 
+import com.medioka.notesapp.domain.model.ResultState
+import com.medioka.notesapp.domain.model.Note
 import kotlinx.coroutines.flow.Flow
 
 interface NoteRepository {
     fun getNotes(): Flow<ResultState<List<Note>>>
-    fun dummy(): Flow<List<Note>>
     suspend fun getNoteDetail(id: Int): ResultState<Note>
     suspend fun addNote(note: Note)
     suspend fun deleteNote(note: Note)

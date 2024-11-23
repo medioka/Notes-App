@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.medioka.notesapp.databinding.CardNoteBinding
-import com.medioka.notesapp.domain.Note
+import com.medioka.notesapp.domain.model.Note
 
 class NotesAdapter(
     private val notes: List<Note>,

@@ -1,8 +1,8 @@
 package com.medioka.notesapp.data
 
-import com.medioka.notesapp.domain.Note
-import com.medioka.notesapp.domain.NoteRepository
-import com.medioka.notesapp.domain.ResultState
+import com.medioka.notesapp.domain.model.Note
+import com.medioka.notesapp.domain.model.ResultState
+import com.medioka.notesapp.domain.repository.NoteRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
@@ -21,10 +21,6 @@ class NoteRepositoryImpl(private val noteDao: NoteDao) : NoteRepository {
         }.catch { exception ->
             emit(ResultState.Error(exception))
         }
-    }
-
-    override fun dummy(): Flow<List<Note>> {
-        return noteDao.getNotes()
     }
 
     override suspend fun getNoteDetail(id: Int): ResultState<Note> {

@@ -1,7 +1,7 @@
 package com.medioka.notesapp.domain.usecase
 
-import com.medioka.notesapp.domain.Note
-import com.medioka.notesapp.domain.NoteRepository
+import com.medioka.notesapp.domain.model.Note
+import com.medioka.notesapp.domain.repository.NoteRepository
 import com.medioka.notesapp.domain.utils.DateUtils
 
 class ModifyNoteUseCase(private val noteRepository: NoteRepository) {

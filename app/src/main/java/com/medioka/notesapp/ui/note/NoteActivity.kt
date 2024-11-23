@@ -1,4 +1,4 @@
-package com.medioka.notesapp
+package com.medioka.notesapp.ui.note
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -12,6 +12,8 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.medioka.notesapp.NoteApplication
+import com.medioka.notesapp.R
 import com.medioka.notesapp.databinding.ActivityNoteBinding
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch

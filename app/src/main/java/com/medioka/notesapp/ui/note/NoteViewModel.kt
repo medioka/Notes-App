@@ -1,10 +1,10 @@
-package com.medioka.notesapp
+package com.medioka.notesapp.ui.note
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.medioka.notesapp.domain.Note
-import com.medioka.notesapp.domain.ResultState
+import com.medioka.notesapp.domain.model.Note
+import com.medioka.notesapp.domain.model.ResultState
 import com.medioka.notesapp.domain.usecase.GetNotesUseCase
 import com.medioka.notesapp.domain.usecase.ModifyNoteUseCase
 import com.medioka.notesapp.domain.utils.DateUtils

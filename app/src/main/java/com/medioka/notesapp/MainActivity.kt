@@ -11,14 +11,16 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.medioka.notesapp.databinding.ActivityMainBinding
-import com.medioka.notesapp.domain.Note
-import com.medioka.notesapp.domain.ResultState
+import com.medioka.notesapp.domain.model.Note
+import com.medioka.notesapp.domain.model.ResultState
+import com.medioka.notesapp.ui.HomeViewModel
 import com.medioka.notesapp.ui.NoteListener
 import com.medioka.notesapp.ui.NotesAdapter
+import com.medioka.notesapp.ui.note.NoteActivity
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), NoteListener {
-    private lateinit var notesViewModel: NotesViewModel
+    private lateinit var homeViewModel: HomeViewModel
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity(), NoteListener {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        notesViewModel = (application as NoteApplication).appContainer.getNotesViewModel(this)
+        homeViewModel = (application as NoteApplication).appContainer.getNotesViewModel(this)
         binding.rvNotes.layoutManager = GridLayoutManager(this, 2)
 
         handleAddNoteButton()
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity(), NoteListener {
     private fun observeNotes() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                notesViewModel.noteResult.collect { state ->
+                homeViewModel.noteResult.collect { state ->
                     when (state) {
                         is ResultState.Empty -> {
                             resetAllVisibility()
@@ -94,7 +96,7 @@ class MainActivity : AppCompatActivity(), NoteListener {
     }
 
     override fun onDeleteClicked(note: Note) {
-        notesViewModel.deleteNote(note)
+        homeViewModel.deleteNote(note)
     }
 }
 

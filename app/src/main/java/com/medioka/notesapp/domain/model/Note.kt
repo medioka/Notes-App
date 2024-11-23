@@ -1,4 +1,4 @@
-package com.medioka.notesapp.domain
+package com.medioka.notesapp.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

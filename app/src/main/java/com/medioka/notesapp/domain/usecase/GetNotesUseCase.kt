@@ -1,8 +1,8 @@
 package com.medioka.notesapp.domain.usecase
 
-import com.medioka.notesapp.domain.Note
-import com.medioka.notesapp.domain.NoteRepository
-import com.medioka.notesapp.domain.ResultState
+import com.medioka.notesapp.domain.model.Note
+import com.medioka.notesapp.domain.repository.NoteRepository
+import com.medioka.notesapp.domain.model.ResultState
 import kotlinx.coroutines.flow.Flow
 
 class GetNotesUseCase(private val noteRepository: NoteRepository) {

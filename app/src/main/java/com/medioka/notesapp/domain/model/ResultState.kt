@@ -1,4 +1,4 @@
-package com.medioka.notesapp.domain
+package com.medioka.notesapp.domain.model
 
 sealed class ResultState<out T> {
     data object Default : ResultState<Nothing>()
