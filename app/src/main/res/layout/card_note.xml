@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_note"
     android:layout_width="150dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginStart="20dp"
     android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="20dp"
     android:elevation="20dp"
     app:cardCornerRadius="8dp">
 
@@ -18,12 +18,15 @@
 
         <TextView
             android:id="@+id/tvNoteTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="1"
+            android:maxLines="2"
             android:textSize="14sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+           android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Purpose of Life" />
@@ -32,15 +35,15 @@
             android:id="@+id/btnDelete"
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/content_description_more_info"
             android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_delete"
+            android:padding="8dp"
+            android:src="@drawable/ic_close"
             app:layout_constraintBottom_toBottomOf="@+id/tvNoteTitle"
-            app:layout_constraintStart_toEndOf="@+id/tvNoteTitle"
-            app:layout_constraintTop_toTopOf="@+id/tvNoteTitle"
-            app:tint="@color/whisper" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#b0b0b0" />
 
         <TextView
             android:id="@+id/tvNoteContent"
@@ -50,7 +53,7 @@
             android:ellipsize="end"
             android:maxLines="7"
             android:minLines="7"
-            android:textColor="@color/whisper"
+            android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvNoteTitle"
@@ -61,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:textColor="@color/whisper"
+            android:textColor="@color/orange"
             android:textSize="8sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvNoteContent"

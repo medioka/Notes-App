@@ -1,11 +1,13 @@
 package com.medioka.notesapp.domain.utils
 
+import android.annotation.SuppressLint
 import java.text.SimpleDateFormat
 import java.util.Date
 
 object DateUtils {
-    private const val DATE_FORMAT = "yyyy-MM-dd"
+    private const val DATE_FORMAT = "EEE, dd MMM yyyy"
 
+    @SuppressLint("SimpleDateFormat")
     fun getCurrentDateInStringFormat(): String {
         val dateFormat = SimpleDateFormat(DATE_FORMAT)
         return try {
